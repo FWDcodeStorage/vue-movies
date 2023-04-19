@@ -4,9 +4,7 @@
       <router-link to="/movie/tt3896198">
         <img
           src="https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
-          alt="poster"
-          class="feature-img"
-        />
+          alt="poster" class="feature-img" />
         <div class="details">
           <h3>Guardians of the Galaxy Vol. 2</h3>
           <p>
@@ -19,29 +17,25 @@
     </div>
 
     <form @submit.prevent="SearchMovies" class="search-box">
-      <input
-        type="text"
-        placeholder="What movie you are looking for?"
-        v-model="search"
-      />
-      <input type="submit" value="Search" @submit.prevent="SearchMovies" />
+      <input type="text" placeholder="What movie you are looking for?" v-model="search" />
+      <input type="submit" value="Search" @click.prevent="SearchMovies" />
     </form>
 
     <div class="movie-list">
       <div class="movie" v-for="movie in movies" :key="movie.imdbID">
-        <router-link :to="'/movie/' +movie.imdbID" class="movie-link">
+        <router-link :to="'/movie/' + movie.imdbID" class="movie-link">
           <div class="movie-poster">
             <img :src="movie.Poster" :alt="movie.Title">
             <div class="type">
               {{ movie.Type }}
             </div>
           </div>
-            <div class="detail">
-              <div>
-                <p class="year"> Year: {{ movie.Year }}</p>
-                <h3>{{ movie.Title }}</h3>
-              </div>
-        </div>
+          <div class="detail">
+            <div>
+              <p class="year"> Year: {{ movie.Year }}</p>
+              <h3>{{ movie.Title }}</h3>
+            </div>
+          </div>
         </router-link>
       </div>
     </div>
@@ -51,7 +45,6 @@
 <script>
 // @ is an alias to /src
 import { ref } from "vue";
-import env from "@/.env";
 
 export default {
   setup() {
@@ -60,7 +53,7 @@ export default {
 
     const SearchMovies = () => {
       if (search.value != "") {
-        fetch(`http://www.omdbapi.com/?apikey=${env.apikey}&s=${search.value}`)
+        fetch(`http://www.omdbapi.com/?apikey=${process.env.VUE_APP_API_KEY}&s=${search.value}`)
           .then((res) => res.json())
           .then((data) => {
             movies.value = data.Search;
@@ -106,6 +99,7 @@ export default {
         font-size: 1.1rem;
         letter-spacing: 0.03rem;
       }
+
       p {
         font-size: 0.9rem;
         letter-spacing: 0.02rem;
@@ -164,27 +158,27 @@ export default {
     }
   }
 
-  .movie-list{
+  .movie-list {
     display: flex;
     flex-wrap: wrap;
     margin: 0px 5px;
 
-    .movie{
+    .movie {
       max-width: 50%;
       flex: 1 1 50%;
       padding: 15px 5px;
 
-      .movie-link{
+      .movie-link {
         display: flex;
         flex-direction: column;
         height: 100%;
         cursor: pointer;
 
-        .movie-poster{
+        .movie-poster {
           position: relative;
           display: block;
 
-          img{
+          img {
             display: block;
             width: 100%;
             height: 300px;
@@ -192,25 +186,25 @@ export default {
           }
 
 
-            .type {
-              position: absolute;
-              padding: 5px 15px;
-              background-color: rgb(3, 193, 246);
-              color: #fff;
-              top: 15px;
-              left: 0;
-              text-transform: capitalize;
-            }
-          
+          .type {
+            position: absolute;
+            padding: 5px 15px;
+            background-color: rgb(3, 193, 246);
+            color: #fff;
+            top: 15px;
+            left: 0;
+            text-transform: capitalize;
+          }
+
         }
 
-        .detail{
+        .detail {
           background-color: #496583;
           padding: 15px 5px;
           flex: 1 1 100%;
           border-radius: 0px 0px 5px 5px;
 
-          .year{
+          .year {
             color: #b5b5b5;
           }
         }

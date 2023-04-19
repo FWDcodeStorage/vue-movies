@@ -48,17 +48,18 @@
 <script>
 import { onBeforeMount, ref } from "vue";
 import { useRoute } from "vue-router";
-import env from "@/.env";
+
 
 export default {
     setup() {
         const route = useRoute();
         const movie = ref({});
         const active = ref(false);
+       
 
         onBeforeMount(() => {
             fetch(
-                `http://www.omdbapi.com/?apikey=${env.apikey}&i=${route.params.id}&plot=full`
+                `http://www.omdbapi.com/?apikey=${process.env.VUE_APP_API_KEY}&i=${route.params.id}&plot=full`
             )
                 .then((res) => res.json())
                 .then((data) => {
