@@ -5,7 +5,7 @@
         </div>
         <div class="header">
             <div class="rating">
-                <h3>{{ movie.imdbRating }}</h3>
+                <p>{{ movie.imdbRating }}</p>
             </div>
             <div class="year">
                 <p>{{ movie.Year }}</p>
@@ -101,6 +101,7 @@ export default {
         .year,
         .runtime,
         .rating {
+            text-align: center;
             background-color: rgb(3, 193, 246);
             padding: 5px 15px;
             border-radius: 5px;
@@ -178,6 +179,104 @@ export default {
             }
             }
         }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .movie-detail{
+        p{
+            font-size: 1rem;
+        }
+
+        h3{
+            font-size: 1.6rem;
+        }
+
+        .header{
+            gap: 15px;
+
+            .year,
+            .runtime,
+            .rating {
+                p{
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .movie-poster{
+            img{
+                max-width: 400px;
+            }
+        }
+    }
+
+    .more-info{
+        h5{
+            font-size: .8rem;
+        }
+
+       .info-inner{
+
+        span{
+            font-size: .9rem;
+        }
+       }
+    }
+}
+
+@media only screen and (min-width:1024px){
+h1{
+    font-size: 3rem;
+  }
+  h3{
+    font-size: 1.8rem;
+  }
+  p{
+    font-size: 1.2rem !important;
+  }
+
+  .movie-detail{
+
+        .header{
+            gap: 15px;
+
+            .year,
+            .runtime,
+            .rating {
+                p{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .movie-poster{
+            img{
+                width: 500px !important;
+                max-height: 55vh;
+            }
+        }
+    }
+    
+    .genre{
+        margin-top: 20px;
+        background-color: rgb(3, 193, 246);
+        padding: 10px 10px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .more-info{
+        h5{
+            font-size: 1rem !important;
+        }
+
+       .info-inner{
+
+        span{
+            font-size: .9rem;
+        }
+       }
     }
 }
 </style>

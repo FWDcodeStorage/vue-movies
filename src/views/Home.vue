@@ -212,4 +212,104 @@ export default {
     }
   }
 }
+@media only screen and (min-width:768px) {
+  .home{
+    .feature-card{
+      .feature-img{
+        height: 500px;
+      }
+
+      .details{
+        h3{
+          font-size: 1.5rem;
+        }
+        p{
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .search-box{
+      padding: 25px;
+      input[type="text"]{
+        padding: 15px 25px;
+        font-size: 26px;
+      }
+
+      input[type="submit"] {
+        max-width: 700px;
+      }
+    }
+
+    .movie-list{
+      margin: 0 25px;
+
+      .movie-link{
+
+        .movie-poster{
+
+          img {
+            max-height: 500px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width:1024px){
+  h1{
+    font-size: 3rem;
+  }
+  h3{
+    font-size: 1.8rem;
+  }
+  p{
+    font-size: 1.1rem;
+  }
+  .home{
+    .feature-card{
+      .feature-img{
+        min-height: 50vh;
+        max-height: 65vh;
+        
+      }
+
+      .details{
+        h3{
+          font-size: 1.8rem;
+        }
+        p{
+        font-size: 1.2rem;
+  }
+      }
+    }
+
+    .search-box{
+      padding: 25px;
+      input[type="text"]{
+        font-size: 30px;
+      }
+
+      input[type="submit"] {
+        max-width: 90vw;
+        font-size: 30px;
+      }
+    }
+
+    .movie-list{
+      margin: 0 25px;
+
+      .movie-link{
+        
+        .movie-poster{
+
+          img {
+            height: 500px !important;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

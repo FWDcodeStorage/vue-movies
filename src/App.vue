@@ -43,4 +43,16 @@ header {
   align-items: center;
   padding: 10px 20px;
 }
+
+@media only screen and (min-width:1024px){
+  h1{
+    font-size: 3rem;
+  }
+  h3{
+    font-size: 1.8rem !important;
+  }
+  p{
+    font-size: 1.2rem !important;
+  }
+}
 </style>
