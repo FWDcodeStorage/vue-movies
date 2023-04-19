@@ -48,7 +48,7 @@
 <script>
 import { onBeforeMount, ref } from "vue";
 import { useRoute } from "vue-router";
-import env from "@/env";
+import env from "@/.env";
 
 export default {
     setup() {
