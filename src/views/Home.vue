@@ -17,7 +17,7 @@
     </div>
 
     <form @submit.prevent="SearchMovies" class="search-box">
-      <input type="text" placeholder="What movie you are looking for?" v-model="search" />
+      <input type="text" placeholder="What are you looking for?" v-model="search" />
       <input type="submit" value="Search" @click.prevent="SearchMovies" />
     </form>
 
@@ -77,8 +77,8 @@ export default {
     .feature-img {
       display: block;
       width: 100%;
-      height: 300px;
-      object-fit: cover;
+      height: 40vh;
+            object-fit: cover;
 
       position: relative;
       z-index: 0;
@@ -216,7 +216,7 @@ export default {
   .home{
     .feature-card{
       .feature-img{
-        height: 500px;
+        
       }
 
       .details{
